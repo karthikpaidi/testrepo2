@@ -7,36 +7,16 @@ pipeline {
           "A": {
             echo 'some'
             hello()
-            post {
-              always {
-                echo 'Archiving logs and test results...'
-                archiveArtifacts '${WORKSPACE}/**'
-              }
-            }
-            
           },
           
           "E": {
             echo 'hola'
             hello()
-              post {
-                always {
-                  echo 'Archiving logs and test results...'
-                  archiveArtifacts '${WORKSPACE}/**'
-                }
-              }
-            
           },
           
           "C": {
             echo 'hola'
             hello()
-            post {
-              always {
-                  echo 'Archiving logs and test results...'
-                  archiveArtifacts '${WORKSPACE}/**'
-              }
-            }
             
           }
         )
@@ -47,15 +27,16 @@ pipeline {
       steps {
         echo 'test'
         hello()
-          post {
-            always {
-              echo 'Archiving logs and test results...'
-              archiveArtifacts '${WORKSPACE}/**'
-            }
-          }
       }
     }
   }
+  post {
+        always {
+            echo 'Archiving logs and test results...'
+            archiveArtifacts '${WORKSPACE}/**'
+        }
+  }
+            
 }
 
 def hello() {
