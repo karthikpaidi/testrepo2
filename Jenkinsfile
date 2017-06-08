@@ -4,15 +4,15 @@ pipeline {
     stage('sample1') {
       steps {
         parallel(
-          "sample1": {
+          "A": {
             echo 'some'
             
           },
-          "sample3": {
+          "E": {
             echo 'hola'
             
           },
-          "sample4": {
+          "C": {
             echo 'hola'
             
           }
