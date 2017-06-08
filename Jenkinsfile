@@ -29,14 +29,7 @@ pipeline {
         hello()
       }
     }
-  }
-  post {
-        always {
-            echo 'Archiving logs and test results...'
-            archiveArtifacts "${WORKSPACE}/**"
-        }
-  }
-            
+  }           
 }
 
 def hello() {
