@@ -33,7 +33,7 @@ pipeline {
   post {
         always {
             echo 'Archiving logs and test results...'
-            archiveArtifacts '${WORKSPACE}/**'
+            archiveArtifacts "${WORKSPACE}/**"
         }
   }
             
